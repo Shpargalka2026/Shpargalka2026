@@ -1,0 +1,269 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .land { background: #1a0e14; color: #F9F5F0; font-family: 'Inter', sans-serif; width: 100%; }
+  .hero { background: #221018; padding: 56px 32px 44px; text-align: center; border-bottom: 1px solid #6D2E4633; }
+  .badge { display: inline-block; background: #6D2E46; color: #C9956E; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 22px; }
+  .hero-title { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 600; line-height: 1.15; color: #F9F5F0; margin-bottom: 8px; }
+  .hero-title span { color: #C9956E; font-style: italic; }
+  .hero-sub { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-style: italic; color: #C9956E; opacity: 0.85; margin-bottom: 20px; }
+  .author-line { font-size: 13px; color: #F9F5F0; opacity: 0.5; margin-bottom: 5px; }
+  .author-link { color: #C9956E; text-decoration: none; font-size: 14px; font-weight: 500; border-bottom: 1px solid #C9956E44; padding-bottom: 1px; }
+  .star { color: #C9956E; margin: 0 5px; font-size: 10px; }
+
+  .for-whom { background: #1a0e14; padding: 36px 32px; border-bottom: 1px solid #6D2E4622; }
+  .section-label { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #C9956E; opacity: 0.65; margin-bottom: 14px; }
+  .for-whom-text { font-size: 15px; line-height: 1.8; color: #F9F5F0; opacity: 0.85; }
+  .for-whom-text strong { color: #C9956E; font-weight: 500; }
+
+  /* PREVIEW SECTION */
+  .preview { padding: 48px 32px; border-bottom: 1px solid #6D2E4633; background: #1e0f17; }
+  .preview-intro { margin-bottom: 28px; }
+  .preview-title { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; color: #F9F5F0; margin-bottom: 6px; }
+  .preview-desc { font-size: 13px; color: #C9956E; opacity: 0.65; }
+
+  /* SAMPLE PAGE */
+  .sample { background: #F9F5F0; border-radius: 12px; overflow: hidden; }
+  .sample-header { padding: 20px 24px 16px; border-bottom: 2px solid #C9956E44; display: flex; align-items: center; gap: 16px; }
+  .sample-num { width: 44px; height: 44px; background: #2a1020; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 600; color: #F9F5F0; flex-shrink: 0; }
+  .sample-header-text { }
+  .sample-section-label { font-size: 11px; color: #9a7060; letter-spacing: 1px; margin-bottom: 3px; }
+  .sample-chapter { font-family: 'Playfair Display', Georgia, serif; font-size: 17px; font-weight: 600; color: #2a1020; line-height: 1.3; }
+
+  .kino-bar { background: #b8936644; padding: 10px 24px; display: flex; align-items: center; gap: 8px; }
+  .kino-icon { font-size: 14px; }
+  .kino-label { font-size: 13px; font-weight: 500; color: #6D2E46; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; }
+  .col-client { background: #f0e8dc; padding: 20px 20px; }
+  .col-therapist { background: #2a1020; padding: 20px 20px; }
+  .col-title { font-size: 12px; font-weight: 500; letter-spacing: 1px; margin-bottom: 10px; border-bottom: 1px solid currentColor; padding-bottom: 6px; }
+  .col-client .col-title { color: #9a7060; }
+  .col-therapist .col-title { color: #C9956E; }
+  .col-text { font-size: 13px; line-height: 1.65; }
+  .col-client .col-text { color: #3a2010; }
+  .col-therapist .col-text { color: #F9F5F0; opacity: 0.88; }
+  .col-therapist .col-text em { color: #C9956E; font-style: normal; font-weight: 500; }
+
+  .buks-bar { background: #2a1020; padding: 10px 24px; display: flex; align-items: center; gap: 8px; }
+  .buks-icon { font-size: 14px; }
+  .buks-label { font-size: 13px; font-weight: 500; color: #F9F5F0; }
+
+  .buks-list { background: #F9F5F0; }
+  .buks-item { padding: 14px 20px 14px 24px; border-bottom: 1px solid #C9956E22; border-left: 3px solid #C9956E; margin: 10px 16px; border-radius: 6px; background: #f5ede0; }
+  .buks-term { font-size: 13px; font-weight: 500; color: #6D2E46; margin-bottom: 4px; }
+  .buks-def { font-size: 12px; color: #3a2010; line-height: 1.55; }
+
+  .strat-bar { background: #b8936644; padding: 10px 24px; display: flex; align-items: center; gap: 8px; margin-top: 2px; }
+  .strat-label { font-size: 13px; font-weight: 500; color: #6D2E46; }
+
+  .rule-box { background: #2a1020; margin: 0 16px 12px; border-radius: 8px; padding: 14px 18px; font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-style: italic; color: #F9F5F0; opacity: 0.92; line-height: 1.6; }
+
+  .strat-steps { padding: 0 16px 16px; background: #F9F5F0; }
+  .strat-step { display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start; }
+  .strat-n { width: 28px; height: 28px; background: #C9956E; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; color: #fff; flex-shrink: 0; margin-top: 2px; }
+  .strat-body { }
+  .strat-name { font-size: 13px; font-weight: 500; color: #6D2E46; margin-bottom: 3px; }
+  .strat-text { font-size: 12px; color: #3a2010; line-height: 1.55; }
+  .strat-text em { font-style: italic; color: #6D2E46; }
+
+  .sample-footer { background: #f0e8dc; padding: 10px 24px; text-align: center; font-size: 11px; color: #9a7060; font-style: italic; letter-spacing: 0.5px; }
+
+  /* WHAT'S INSIDE */
+  .inside-list { padding: 40px 32px; border-bottom: 1px solid #6D2E4622; background: #1a0e14; }
+  .topics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
+  .topic-item { background: #221018; border: 1px solid #6D2E4633; border-radius: 8px; padding: 12px 14px; display: flex; gap: 10px; }
+  .topic-num { color: #C9956E; font-size: 11px; font-weight: 500; opacity: 0.6; min-width: 18px; padding-top: 2px; }
+  .topic-quote { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-style: italic; color: #F9F5F0; opacity: 0.88; line-height: 1.35; margin-bottom: 3px; }
+  .topic-sub { font-size: 11px; color: #C9956E; opacity: 0.6; }
+
+  /* VALUES */
+  .values { background: #221018; padding: 36px 32px; border-bottom: 1px solid #6D2E4622; }
+  .val-cards { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 18px; }
+  .val-card { background: #1a0e14; border: 1px solid #6D2E4633; border-left: 3px solid #C9956E; border-radius: 6px; padding: 14px 18px; }
+  .val-title { font-size: 13px; font-weight: 500; color: #C9956E; margin-bottom: 5px; }
+  .val-text { font-size: 13px; color: #F9F5F0; opacity: 0.7; line-height: 1.6; }
+
+  /* PRICING */
+  .pricing { padding: 48px 32px; text-align: center; background: #1a0e14; }
+  .price-box { background: #2a1020; border: 1px solid #C9956E33; border-radius: 16px; padding: 36px 28px; max-width: 380px; margin: 0 auto; }
+  .price-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #C9956E; opacity: 0.65; margin-bottom: 16px; }
+  .price-main { font-family: 'Playfair Display', Georgia, serif; font-size: 52px; font-weight: 600; color: #C9956E; line-height: 1; margin-bottom: 4px; }
+  .price-uah { font-size: 14px; color: #F9F5F0; opacity: 0.4; margin-bottom: 18px; }
+  .price-note { font-size: 13px; color: #F9F5F0; opacity: 0.5; line-height: 1.65; margin-bottom: 26px; font-style: italic; }
+  .cta-btn { display: block; width: 100%; background: #6D2E46; color: #F9F5F0; font-size: 15px; font-weight: 500; padding: 16px 24px; border-radius: 10px; text-decoration: none; text-align: center; border: none; cursor: pointer; letter-spacing: 0.3px; }
+  .cta-btn:hover { background: #8a3a58; }
+  .cta-sub { font-size: 12px; color: #F9F5F0; opacity: 0.35; margin-top: 10px; }
+
+  .footer { padding: 22px 32px; text-align: center; border-top: 1px solid #6D2E4618; }
+  .footer-text { font-size: 12px; color: #F9F5F0; opacity: 0.3; }
+
+  @media (max-width: 520px) {
+    .two-col { grid-template-columns: 1fr; }
+    .topics-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 28px; }
+  }
+</style>
+
+<div class="land">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">Методичний посібник</div>
+    <h1 class="hero-title">Шпаргалка для<br><span>гештальтистів</span></h1>
+    <p class="hero-sub">Простою мовою від супервізора</p>
+    <p class="author-line">Автор:</p>
+    <a class="author-link" href="https://www.instagram.com/supervisor_koshkina/" target="_blank">Олена Кошкіна ↗</a>
+    <br><br>
+    <span class="star">✦</span>
+    <span style="font-size:12px; color:#F9F5F0; opacity:0.35;">Гештальт-терапевт · Супервізор · Інструктор ЄАГТ</span>
+    <span class="star">✦</span>
+  </div>
+
+  <!-- FOR WHOM -->
+  <div class="for-whom">
+    <p class="section-label">✦ Для кого це</p>
+    <p class="for-whom-text">
+      Для <strong>практикуючих психологів</strong>, гештальт-терапевтів та студентів гештальт-програм, які хочуть впевнено тримати терапевтичну позицію, не «плавати» у складних клієнтських кейсах та <strong>економити свій контейнер</strong> під час сесій.
+    </p>
+  </div>
+
+  <!-- PREVIEW -->
+  <div class="preview">
+    <div class="preview-intro">
+      <p class="section-label">✦ Як виглядає посібник зсередини</p>
+      <p class="preview-title">Сторінка з живого посібника</p>
+      <p class="preview-desc">Кожна з 10 тем — це три блоки: що відбувається на сесії, де клієнт буксує і як з цим працювати</p>
+    </div>
+
+    <div class="sample">
+      <div class="sample-header">
+        <div class="sample-num">1</div>
+        <div class="sample-header-text">
+          <div class="sample-section-label">Розділ 1 · «Ми посварилися»</div>
+          <div class="sample-chapter">Як розплутувати злиття клієнта і не стати суддею</div>
+        </div>
+      </div>
+
+      <div class="kino-bar">
+        <span class="kino-icon">🎬</span>
+        <span class="kino-label">Оце так кіно</span>
+      </div>
+      <div class="two-col">
+        <div class="col-client">
+          <div class="col-title">Клієнт на сесії</div>
+          <div class="col-text">Приходить і 45 хвилин захлинаючись розповідає про третю особу:<br><br>«А він сказав... А вона пішла... Ми постійно сваримося, у нас все погано, скажіть, ну хіба він правий?!»</div>
+        </div>
+        <div class="col-therapist">
+          <div class="col-title">Твій стан</div>
+          <div class="col-text">Ти відчуваєш, що тебе засмоктує в чужу комунальну кухню.<br><br><em>Стоп! Це пастка.</em> Клієнт приніс на сесію злиття (конфлюенцію). Твоє завдання — не розбиратися в їхніх стосунках, а повернути клієнта до себе. Третьої людини в кабінеті немає.</div>
+        </div>
+      </div>
+
+      <div class="buks-bar">
+        <span class="buks-icon">⚙️</span>
+        <span class="buks-label">Де клієнт буксує</span>
+      </div>
+      <div class="buks-list">
+        <div class="buks-item">
+          <div class="buks-term">Злиття</div>
+          <div class="buks-def">Говорить «Ми», плутає свої бажання з бажаннями партнера («Ми хочемо поїхати у відпустку» — насправді хоче дружина, а він хоче лежати на дивані).</div>
+        </div>
+        <div class="buks-item">
+          <div class="buks-term">Проекція</div>
+          <div class="buks-def">Клієнт впевнений, що знає, про що думає інший («Він робить це спеціально, щоб мене розлютити!»).</div>
+        </div>
+        <div class="buks-item" style="margin-bottom:10px;">
+          <div class="buks-term">Інтроекти</div>
+          <div class="buks-def">Купа правил у голові: «В ідеальній сім'ї не сваряться», «Чоловік повинен...», «Дружина зобов'язана...».</div>
+        </div>
+      </div>
+
+      <div class="strat-bar">
+        <span class="strat-label">🧭 Стратегія роботи</span>
+      </div>
+      <div class="rule-box">Головне правило: Відрізай третю особу. Повертай прожектори на клієнта. Розділяй їхнє «Ми» на двох окремих живих людей.</div>
+      <div class="strat-steps">
+        <div class="strat-step">
+          <div class="strat-n">1</div>
+          <div class="strat-body">
+            <div class="strat-name">Переклад стрілок на «Я»</div>
+            <div class="strat-text">Ти: <em>«А коли він заорав, що в цей момент сталося з тобою? Що ти відчула? Де це відгукується в тілі?»</em></div>
+          </div>
+        </div>
+        <div class="strat-step">
+          <div class="strat-n">2</div>
+          <div class="strat-body">
+            <div class="strat-name">Руйнування ілюзії «читання думок»</div>
+            <div class="strat-text">Ти: <em>«Як ти розумієш? Ти питала його, чи сама за нього додумала?»</em></div>
+          </div>
+        </div>
+        <div class="strat-step" style="margin-bottom:0;">
+          <div class="strat-n">3</div>
+          <div class="strat-body">
+            <div class="strat-name">Легалізація автономії</div>
+            <div class="strat-text">Ти: <em>«Схоже, тобі дуже страшно виявити, що ви в чомусь не збігаєтеся. Але ж можна любити людину і хотіти іншу відпустку».</em></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sample-footer">✦ Шпаргалка для гештальтистів © Олена Кошкіна ✦</div>
+    </div>
+
+    <p style="text-align:center; margin-top:16px; font-size:12px; color:#C9956E; opacity:0.5; letter-spacing:1px;">✦ &nbsp; і ще 9 таких самих розділів &nbsp; ✦</p>
+  </div>
+
+  <!-- INSIDE LIST -->
+  <div class="inside-list">
+    <p class="section-label">✦ Всі 10 тем</p>
+    <div class="topics-grid">
+      <div class="topic-item"><span class="topic-num">01</span><div><div class="topic-quote">«Ми посварилися»</div><div class="topic-sub">Розплутуємо злиття</div></div></div>
+      <div class="topic-item"><span class="topic-num">02</span><div><div class="topic-quote">«Мені страшно»</div><div class="topic-sub">Заземлюємо тривогу</div></div></div>
+      <div class="topic-item"><span class="topic-num">03</span><div><div class="topic-quote">«Я — ніщо»</div><div class="topic-sub">Токсичний сором</div></div></div>
+      <div class="topic-item"><span class="topic-num">04</span><div><div class="topic-quote">«Я здох»</div><div class="topic-sub">Вигорання</div></div></div>
+      <div class="topic-item"><span class="topic-num">05</span><div><div class="topic-quote">«Нічого не хочу»</div><div class="topic-sub">Апатія</div></div></div>
+      <div class="topic-item"><span class="topic-num">06</span><div><div class="topic-quote">«Мама псує життя»</div><div class="topic-sub">Привиди батьків</div></div></div>
+      <div class="topic-item"><span class="topic-num">07</span><div><div class="topic-quote">«Не знаю, хто я»</div><div class="topic-sub">Криза ідентичності</div></div></div>
+      <div class="topic-item"><span class="topic-num">08</span><div><div class="topic-quote">«Я всіх уб'ю!»</div><div class="topic-sub">Робота з афектом</div></div></div>
+      <div class="topic-item"><span class="topic-num">09</span><div><div class="topic-quote">«Мною користуються»</div><div class="topic-sub">Діряві кордони</div></div></div>
+      <div class="topic-item"><span class="topic-num">10</span><div><div class="topic-quote">«Болить бік»</div><div class="topic-sub">Психосоматика</div></div></div>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <div class="values">
+    <p class="section-label">✦ Головна цінність</p>
+    <div class="val-cards">
+      <div class="val-card">
+        <div class="val-title">Мова легка та ясна</div>
+        <div class="val-text">Інтроекція, конфлюенція, функція Id — пояснені на пальцях, без академічного пафосу.</div>
+      </div>
+      <div class="val-card">
+        <div class="val-title">Інструмент «швидкої допомоги»</div>
+        <div class="val-text">Відкрий конкретну сторінку за 10 хвилин до складної сесії — і повернеш собі опору.</div>
+      </div>
+      <div class="val-card">
+        <div class="val-title">База на класиках</div>
+        <div class="val-text">Перлз, Робін, Франчесетті, Спаньоло Лобб — відфільтровано крізь супервізорський досвід.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="pricing">
+    <div class="price-box">
+      <p class="price-label">✦ Вартість</p>
+      <div class="price-main">18 €</div>
+      <div class="price-uah">або ~929 грн</div>
+      <p class="price-note">Половина вартості однієї сесії — і інструмент, який назавжди залишиться у вашому арсеналі.</p>
+      <a class="cta-btn" href="https://t.me/+rXOs40kTUx82NWIy" target="_blank">Отримати посібник →</a>
+      <p class="cta-sub">Перехід до Telegram для оформлення</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p class="footer-text">© Олена Кошкіна · supervisor_koshkina · Gestalt therapist & Supervisor</p>
+  </div>
+
+</div>
